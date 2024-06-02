@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./echarts.js"></script>
+    <style>
+        #main {
+            margin: auto;
+            margin-top: 80px;
+            width: 650px;
+            height: 400px;
+            /* background-color: pink; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main"></div>
+    <script>
+        var chartDom = document.getElementById('main');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            // title: {
+            //     text: '部分城市隧道数量统计',
+            //     // subtext: 'Fake Data',
+            //     left: 'center',
+            //     top: 'top',
+            //     FontFaceSet: '微软雅黑',
+            //     textStyle: {
+            //         color: '#000',
+            //         fontSize: 25
+            //     }
+            // },
+            grid: {
+                top: 20
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                type: 'scroll',
+                orient: 'vertical',
+                left: 'left'
+            },
+            series: [
+                {
+                    name: '隧道数量',
+                    type: 'pie',
+                    radius: '70%',
+
+                    data: [
+                        { value: 26, name: '广州' },
+                        { value: 25, name: '南京' },
+                        { value: 23, name: '上海' },
+                        { value: 20, name: '杭州' },
+                        { value: 19, name: '厦门' },
+                        { value: 16, name: '香港' },
+                        { value: 16, name: '苏州' },
+                        { value: 15, name: '郑州' },
+                        { value: 8, name: '北京' },
+                        { value: 7, name: '天津' },
+                        { value: 7, name: '武汉' },
+                        { value: 6, name: '成都' },
+                        { value: 6, name: '西安' },
+                        { value: 5, name: '大连' },
+                        { value: 5, name: '深圳' },
+                        { value: 5, name: '长沙' },
+                        { value: 5, name: '重庆' },
+                        { value: 4, name: '珠海' }
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+
+    </script>
+</body>
+
+</html>
